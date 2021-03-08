@@ -1,0 +1,12 @@
+<div class="col">
+    <div *ngIf="!items.length">
+        <h2> No todo items were added </h2>
+    </div>
+
+    <div *ngIf="items.length">
+        <ng-container *ngFor="let item of items">
+            <app-todo-item [item]="item" (itemDeleted)="deleteItem($event)" (itemEdited)="editItem($event)" ></app-todo-item>
+        </ng-container>    
+    </div>
+    
+</div>

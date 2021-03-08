@@ -1,0 +1,16 @@
+<div class="form-group form-check item-wrapper">
+    <input type="checkbox" class="form-check-input" [(ngModel)]="item.isChecked" (change)="togleItemStatus()">
+
+    <ng-container *ngIf="isEditMode">
+        <input type="text" class="item-name-input" [(ngModel)]="item.name">
+        <button type="button" class="btn btn-primary btn-sm" (click)="saveEdit()">Save</button>
+        <button type="button" class="btn btn-secondary btn-sm" (click)="cancelEdit()">Cancel</button>
+    </ng-container>
+
+    <ng-container *ngIf="!isEditMode">
+        <span [class.checked]="item.isChecked" class="item-name-label">{{item.name}}</span>
+        <button type="button" class="btn btn-edit btn-primary btn-sm" (click)="editItem()">Edit</button>
+    </ng-container>
+
+    <button type="button" class="btn btn-warning btn-sm" (click)="deleteItem(item)">Delete</button>
+</div>

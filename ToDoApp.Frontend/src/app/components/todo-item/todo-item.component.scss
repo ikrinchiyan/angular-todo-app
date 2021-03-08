@@ -1,0 +1,48 @@
+.item-name-label, .item-name-input{
+    margin-right: 0.5rem;
+}
+
+.item-name-label{
+    width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    
+    &.checked {
+        text-decoration: line-through;
+    }
+}
+
+.item-name-input{
+    width: 368px;
+}
+
+
+.item-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+button.btn-edit{
+    margin-left: auto;
+}
+
+@media (max-width: 667px){
+    .item-name-label{
+        width: 250px;
+    }
+    
+    .item-name-input{
+        width: 168px;
+    }
+}
+
+@media (max-width: 480px){
+    .item-name-label{
+        width: 150px;
+    }
+    
+    .item-name-input{
+        width: 68px;
+    }
+}

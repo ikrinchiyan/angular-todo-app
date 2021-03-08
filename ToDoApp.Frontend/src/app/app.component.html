@@ -1,0 +1,20 @@
+
+<main>
+    <div class="container main-content">
+
+      <div class="row">
+        <app-todo-item-list [items]="items" (itemDeleted)="deleteItem($event)" (itemEdited)="updateItem($event)">          
+        </app-todo-item-list>
+      </div>
+      
+      <div class="form-group row">
+        <div class="col new-item-wrapper">
+            <label for="newItemInput">Add a new todo item</label>
+            <input [(ngModel)]="newItem" id="newItemInput" type="text" placeholder="Add new todo">
+            <button type="button" class="btn btn-add-new btn-success btn-sm" (click)="addNewItem()">Add</button>
+        </div>
+        
+      </div>
+      
+    </div>
+</main>
